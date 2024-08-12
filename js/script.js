@@ -423,7 +423,7 @@ async function fetchAPIData(endpoint) {
   showSpinner();
 
   const response = await fetch(
-    `${API_URL}${endpoint}?api_key=${API_KEY}&languaje=en-US`
+    `${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`
   );
 
   const data = await response.json();
@@ -442,7 +442,7 @@ async function searchAPIData() {
   showSpinner();
 
   const response = await fetch(
-    `${API_URL}search/${global.search.type}?api_key=${API_KEY}&languaje=en-US&query=${global.search.term}&page=${global.search.page}`
+    `${API_URL}search/${global.search.type}?api_key=${API_KEY}&language=en-US&query=${global.search.term}&page=${global.search.page}`
   );
 
   const data = await response.json();
