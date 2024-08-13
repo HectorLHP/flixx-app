@@ -125,7 +125,7 @@ async function displayMovieDetails() {
             <p>
               ${movie.overview}
             </p>
-            <h5>Genres</h5>
+            <h3>Genres</h3>
             <ul class="list-group">
               ${movie.genres.map((genre) => `<li>${genre.name}</li>`).join('')}
             </ul>
@@ -201,7 +201,7 @@ async function displayShowDetails() {
             <p>
               ${show.overview}
             </p>
-            <h5>Genres</h5>
+            <h3>Genres</h3>
             <ul class="list-group">
               ${show.genres.map((genre) => `<li>${genre.name}</li>`).join('')}
             </ul>
