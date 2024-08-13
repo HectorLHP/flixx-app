@@ -152,6 +152,10 @@ async function displayMovieDetails() {
           <div class="list-group">${movie.production_companies
             .map((company) => `<span>${company.name}</span>`)
             .join(' / ')}</div>
+          <h4>Production Countries</h4>
+          <div class="list-group">${movie.production_countries
+            .map((country) => `<span>${country.name}</span>`)
+            .join(' / ')}</div>
         </div>`;
 
   document.querySelector('#movie-details').appendChild(div);
@@ -192,6 +196,7 @@ async function displayShowDetails() {
               <i class="fas fa-star text-primary"></i>
               ${show.vote_average.toFixed(1)} / 10
             </p>
+            <p class="text-muted">First Air Date: ${show.first_air_date}</p>
             <p class="text-muted">Last Air Date: ${show.last_air_date}</p>
             <p>
               ${show.overview}
@@ -208,6 +213,9 @@ async function displayShowDetails() {
         <div class="details-bottom">
           <h2>Show Info</h2>
           <ul>
+            <li><span class="text-secondary">Networks:</span> ${show.networks
+              .map((network) => `<span>${network.name}</span>`)
+              .join(' / ')}</li>
             <li><span class="text-secondary">Number of Episodes:</span> ${
               show.number_of_episodes
             }</li>
@@ -216,9 +224,17 @@ async function displayShowDetails() {
             }</li>            
             <li><span class="text-secondary">Status:</span> ${show.status}</li>
           </ul>
+          <h4>Created by</h4>
+          <div class="list-group">${show.created_by
+            .map((creator) => `<span>${creator.name}</span>`)
+            .join(' and ')}</div>
           <h4>Production Companies</h4>
           <div class="list-group">${show.production_companies
             .map((company) => `<span>${company.name}</span>`)
+            .join(' / ')}</div>
+          <h4>Production Countries</h4>
+          <div class="list-group">${show.production_countries
+            .map((country) => `<span>${country.name}</span>`)
             .join(' / ')}</div>
         </div>`;
 
