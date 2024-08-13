@@ -502,25 +502,44 @@ function addCommasToNumber(number) {
 }
 
 // Init App
+// function init() {
+//   switch (global.currentPage) {
+//     case '/':
+//     case '/index.html':
+//       displaySlider();
+//       displayPopularMovies();
+//       break;
+//     case '/shows.html':
+//       displayPopularShows();
+//       break;
+//     case '/movie-details.html':
+//       displayMovieDetails();
+//       break;
+//     case '/tv-details.html':
+//       displayShowDetails();
+//       break;
+//     case '/search.html':
+//       search();
+//       break;
+//   }
+
+//   highLightActiveLink();
+// }
+
 function init() {
-  switch (global.currentPage) {
-    case '/':
-    case '/index.html':
-      displaySlider();
-      displayPopularMovies();
-      break;
-    case '/shows.html':
-      displayPopularShows();
-      break;
-    case '/movie-details.html':
-      displayMovieDetails();
-      break;
-    case '/tv-details.html':
-      displayShowDetails();
-      break;
-    case '/search.html':
-      search();
-      break;
+  const page = global.currentPage;
+
+  if (['/', '/index.html'].includes(page)) {
+    displayPopularMovies();
+    displaySlider();
+  } else if (page.includes('shows')) {
+    displayPopularShows();
+  } else if (page.includes('movie-details')) {
+    displayMovieDetails();
+  } else if (page.includes('tv-details')) {
+    displayShowDetails();
+  } else if (page.includes('search')) {
+    search();
   }
 
   highLightActiveLink();
